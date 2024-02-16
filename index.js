@@ -1,25 +1,17 @@
-const playBtn = document.getElementById("play-btn");
-playBtn.addEventListener("click", play);
-
 function play(){
-const homeScreen = document.getElementById("home-screen");
-const playGround = document.getElementById("playGround");
-const screen = document.getElementById('randomAlpha');
+    // show playground
+    showElementById('playGround');
+    // hide playground
+    hideElementById('home-screen');
+    // game loop
+    continueGame();
+    // hide scoreboard
+    hideElementById('score-board');
 
-playGround.classList.remove("hidden");
-homeScreen.classList.add("hidden");
-
-const alphabets = 'abcdefghijklmnopqrstuvwxyz';
-const alphabet = alphabets.split('');
-const randomNumber = Math.round(Math.random() * 25);
-const generateAlphabet = alphabet[randomNumber];
-screen.innerText = generateAlphabet;
-
-// set background color
-    setBackGroundColor(generateAlphabet);
-}
-
-function setBackGroundColor(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.add('bg-orange-400');
+    // reset  score
+    const score = document.getElementById('score');
+    score.innerText = 0;
+    // reset life
+    const life = document.getElementById('life');
+    life.innerText = 5;
 }

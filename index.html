@@ -14,14 +14,14 @@
   </head>
   <body class="bg-[rgb(30,30,30);] h-screen">
     <section id="home-screen"
-      class="home bg-[url('images/background.png')] bg-no-repeat bg-center h-screen flex flex-col justify-center items-center"
+      class=" home bg-[url('images/background.png')] bg-no-repeat bg-center h-screen flex flex-col justify-center items-center"
     >
       <div class="flex flex-col justify-center items-center">
         <h2 class="anton text-white text-9xl">ALPHABET CLASH</h2>
         <p class="text-white text-2xl poppins font-medium mt-10 mb-14">
           Unleash Your Keyboard Kung Fu : Press “Enter” to Play
         </p>
-        <button  id="play-btn" 
+        <button  id="play-btn" onclick="play()"
           class="btn-primary poppins font-medium text-black bg-white px-8 py-5 rounded-lg"
           
         >
@@ -30,7 +30,7 @@
       </div>
     </section>
     <section id="playGround"
-      class="home hidden bg-[url('images/background.png')] bg-no-repeat bg-center h-screen flex flex-col justify-center items-center"
+      class="hidden home bg-[url('images/background.png')] bg-no-repeat bg-center h-screen flex flex-col justify-center items-center"
     >
       <!-- scrren -->
       <div
@@ -88,27 +88,27 @@
         >
           Life
           <img src="images/Vector.svg" alt="" />
-          <span>1</span>
+          <span id="life">5</span>
         </button>
         <button
           class="btn btn px-9 rounded-full border-none text-white bg-[rgb(54,4,144)] inter font-medium"
         >
           Score
           <img src="images/monetization_on.svg" alt="" />
-          <span>1</span>
+          <span id="score">0</span>
         </button>
       </div>
     </section>
-    <section
+    <section id="score-board"
       class="hidden home bg-[url('images/background.png')] bg-no-repeat bg-center h-screen flex flex-col justify-center items-center"
     >
       <div
         class="bg-[linear-gradient(136.67deg,rgba(255,255,255,0.56)0%,rgba(152,151,151,0)102.037%);] px-12 py-11 text-center rounded-2xl"
       >
         <h2 class="pippons font-bold text-6xl text-white">
-          Score : <span class="font-medium">14</span>
+          Score : <span id="final-score" class="font-medium">14</span>
         </h2>
-        <button
+        <button onclick="play()"
           class="btn-primary poppins font-medium text-black bg-white px-8 py-5 rounded-lg my-4"
         >
           Play Again
@@ -118,5 +118,6 @@
     </section>
 
     <script src="index.js"></script>
+    <script src="alpha.js"></script>
   </body>
 </html>
