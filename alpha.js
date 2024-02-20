@@ -31,7 +31,7 @@ function getElementIdByText(elementId){
     const text = element.innerText;
     return text;
 }
-
+const audio = new Audio();
 function detectKey(event){
     const playerPressed = event.key;
     if(playerPressed === 'Escape'){
@@ -42,6 +42,8 @@ function detectKey(event){
     const alpha = document.getElementById('randomAlpha').innerText;
     const expectedResult = alpha.toLowerCase();
     if(playerPressed === expectedResult){
+        audio.src = 'audio/success.mp3';
+        audio.play();
         continueGame();
         removeBackgroundColor(expectedResult);
         const score = document.getElementById('score');
@@ -51,6 +53,8 @@ function detectKey(event){
         score.innerText = updatedScore;
         
     }else{
+        audio.src = 'audio/wrong.mp3';
+        audio.play();
         const life = document.getElementById('life');
         const lifeCount = life.innerText;
         const updateLife = lifeCount - 1;
