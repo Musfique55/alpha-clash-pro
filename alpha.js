@@ -32,12 +32,15 @@ function getElementIdByText(elementId){
     return text;
 }
 const audio = new Audio();
+let gameOn = false;
 function detectKey(event){
+    if(gameOn == false) return;
     const playerPressed = event.key;
     if(playerPressed === 'Escape'){
         hideElementById('playGround');
-        hideElementById('score-board');
-        showElementById('home-screen');
+        hideElementById('home-screen');
+        showElementById('score-board');
+        
     }
     const alpha = document.getElementById('randomAlpha').innerText;
     const expectedResult = alpha.toLowerCase();
@@ -68,7 +71,7 @@ function detectKey(event){
 document.addEventListener('keyup',detectKey);
 
 function play(){
-    // show playground
+    gameOn = true;
     showElementById('playGround');
     // hide playground
     hideElementById('home-screen');
@@ -83,8 +86,10 @@ function play(){
     // reset life
     const life = document.getElementById('life');
     life.innerText = 5;
-}
 
+    }
+    
+// show playground
 function continueGame(){
     const screen = document.getElementById('randomAlpha');
     const randomAlpha = randomAlphabet();
@@ -93,6 +98,7 @@ function continueGame(){
 }
 
 function gameOver(){
+    gameOn = false;
     hideElementById('playGround');
     showElementById('score-board');
     const finalScore = document.getElementById('final-score');
