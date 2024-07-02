@@ -7,4 +7,4 @@
 - Tailwind Css
 - Vanilla Js
 
-# ## If you want to run this in your local computer simply just clone the repository and you can make the changess
+ ## If you want to run this in your local computer simply just clone the repository and you can make the changes.
